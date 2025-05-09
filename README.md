@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+# Insurance Growth Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements a responsive, interactive insurance growth calculator page based on the provided Figma design and Excel-based calculation guide. It uses a modern web development tech stack with TypeScript, React, Tailwind CSS, and Vite.
 
-Currently, two official plugins are available:
+## 🚀 Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To run the project locally:
 
-## Expanding the ESLint configuration
+```bash
+# Install dependencies
+npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+To run tests:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run test
 ```
+
+To view the deployed page [check it out here](https://eventual-calc.vercel.app/)
+
+## 🛠️ Tech Stack
+
+* **React (with Vite)**: Chosen for fast development, great performance in dev mode, and a strong ecosystem.
+* **TypeScript**: Adds type safety and improves maintainability and scalability of the code.
+* **Tailwind CSS**: Enabled quick, utility-first styling with good responsive defaults and flexibility for custom designs.
+* **Vitest + React Testing Library**: Used for testing components and utility functions, ensuring testability.
+
+## ✅ Features
+
+* Interactive insurance growth slider input
+* Dynamic chart and values that update in real-time
+* Functional hamburger menu for small screens
+* Responsive design that works reasonably across screen sizes 
+* Section scroll on CTA button ("How it works")
+* Keyboard accessibility for interactive elements
+* Testimonials section with static cards
+
+## 📌 Assumptions Made
+
+* The Figma file was only an image, not a fully spec'd design system. Thus:
+
+  * Font sizes, spacing, and colors were interpreted with flexibility.
+  * Exact pixel-perfect alignment was not prioritized.
+* The "Testimonials" section appears to be a carousel or slider; three static testimonial cards were implemented instead due to time constraints.
+* Annual insurance growth is the only dynamic input, and other values are constant as per the Excel logic.
+* The "How it works" CTA scrolls to its section as expected behavior.
+
+## ⚠️ Limitations
+
+- This project was developed and tested exclusively in **Google Chrome**. Cross-browser compatibility (e.g., Safari, Firefox, Edge) has not been verified.
+
+## 🔮 If I Had More Time
+
+* Finalize responsive behavior and styling for mobile layouts
+* Build a complete testimonial carousel with proper controls and animations
+* Refine spacing, typography, and color to better match the Figma design
+* Enhance accessibility (ARIA roles, screen reader checks, tab flow audit)
+* Add more unit and integration tests for interactivity and layout
+* Optimize bundle size and performance with code splitting
+* Perform thorough cross-browser testing to ensure consistent behavior across all major browsers (e.g., Safari, Firefox, Edge)
+* Resolve a responsiveness issue observed during Chrome emulator testing, where the bar charts occasionally requires a page reload to render annotations and layout correctly
+
