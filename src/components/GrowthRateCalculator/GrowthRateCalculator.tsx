@@ -81,6 +81,8 @@ const GrowthRateCalculator: React.FC = () => {
 		[premiums],
 	);
 
+	const showAnnotation = premiumsLocked.some((v) => v >= MAX_PREMIUM);
+
 	const barLockedColor = useMemo(
 		() =>
 			premiums.map((premium) => {
@@ -204,6 +206,7 @@ const GrowthRateCalculator: React.FC = () => {
 							type: "line",
 							yMin: MAX_PREMIUM,
 							yMax: MAX_PREMIUM,
+							display: showAnnotation,
 							borderColor: "rgba(51, 132, 76, 1.0)",
 							borderWidth: 2,
 							borderDash: [5, 5],
@@ -227,7 +230,7 @@ const GrowthRateCalculator: React.FC = () => {
 				},
 			},
 		}),
-		[fontSize, overallMaxValue],
+		[fontSize, overallMaxValue, showAnnotation],
 	);
 
 	return (
